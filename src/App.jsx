@@ -5,6 +5,8 @@ import experiences from "../experiences";
 import WorkExperience from "./components/WorkExperience";
 import LinkIcon from "./assets/link.svg";
 import Project from "./components/Project";
+import { contactInfo } from "./consts/consts";
+import Contact from "./components/Contact";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -50,6 +52,14 @@ function App() {
         </div>
       </div>
       <hr className="my-24" />
+      <div className="featured-projects flex flex-row items-start justify-between w-full gap-28">
+        <h2 className="text-lg uppercase font-light">Projects</h2>
+        <div className="flex flex-row gap-3 w-full">
+          {contactInfo.map((ci, idx) => (
+            <Contact key={idx} {...ci} />
+          ))}
+        </div>
+      </div>
     </>
   );
 }
